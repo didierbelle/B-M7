@@ -1,0 +1,115 @@
+nav{
+    width: 100%;
+    /* background-color: rebeccapurple; */
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0 1vw;
+    height: 10vh;
+    background: rgb(237, 237, 237, 0.1);
+    backdrop-filter: blur(10px);
+    position:fixed;
+    z-index: 100;
+    transition: all 0.1s ease;
+}
+
+.dark{
+    background: linear-gradient(to bottom, #f2f2f2 90%, rgba(255, 255, 255, 0));
+    color: #070512ce;   
+    /* border-bottom: .5px solid #070512ce; */
+    font-weight: 600;
+    position: scroll;
+}
+
+nav ul{
+    list-style: none;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5vw;
+}
+
+nav ul li{
+    position: relative;
+    display: inline-block;
+    text-transform: uppercase;
+    font-size: 80%;
+    transition: all 0.4s ease;
+}
+
+nav ul li:hover a::before{
+    content: '';
+    background-color: var(--main-color);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    z-index: -1;
+}
+
+.dark ul li:hover a::before{
+    background-color: var(--main-color);
+}
+
+
+#select-language{
+    position: relative;
+}
+
+#select-language:hover #languages, #select-theme:hover #theme{
+    display: block;
+    position: absolute;
+    /* top: 1vh; */
+}
+
+#languages, #theme{
+    background-color: /*#2d0f49*/ var(--main-color);
+    width: 5vw;
+    text-align: center;
+    line-height: 2.5;
+    display: none;
+    margin: 0;
+    color: #f2f2f2;
+}
+
+.link-selected{
+    position: relative;
+    letter-spacing: 3px;
+}
+
+.link-selected::before{
+    content: '';
+    background-color: #954500e4;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 5px;
+    z-index: -1;
+}
+
+.dark .link-selected::before{
+    display: none;
+}
+
+.dark .link-selected{
+    color: var(--main-color);
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 960px) {
+    nav{
+       padding: 0 .05vw;
+       font-size: 90%;
+    }
+
+    nav ul{
+        gap: 1.5vw;
+    }
+
+    nav ul li{
+        /* font-size: 70%; */
+    }
+}

@@ -1,0 +1,103 @@
+#hero-banner{
+    /* background-color: red; */
+    position: absolute;
+    top: 25%;
+    left: 10%;
+    width: 50vw;
+    height: 40vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-transform: capitalize;
+}
+
+#hero-banner h1{
+    font-size: 3em;
+    line-height: 1.5em;
+    /* background: linear-gradient(to right, blue, pink); */
+    /* background-clip: text; */
+    /* -webkit-background-clip: text; */
+    /* color: transparent; */
+    /* background: yellowgreen; */
+    flex-basis: 70%;
+}
+
+
+#hero-banner button{
+    width: 40%;
+    position: relative;
+    left: 2%;
+    /* margin-top: 2vh; */
+    height: 6vh;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    color: #f2f2f2;
+    background-color: var(--main-color);
+    border: /*1px solid #ae5920a1*/ none;
+    border-radius: 2px;
+    /* transition: all .2s ease-in-out; */
+    font-weight: bold;
+    box-shadow: .5px .5px 0 rgb(34, 29, 29);
+}
+
+#hero-banner button::after{
+    transition: all .2s ease-in-out;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: 1px solid #f2f2f2;
+    top: 10%;
+    left: 2%;
+    border-radius: 2px;
+}
+
+#hero-banner button:hover::after{
+    /* content: ''; */
+    /* position: absolute; */
+    top: 0;
+    left: 0;    
+    /* z-index: -1; */
+}
+
+#find_more{
+    text-align: center;
+    width: 5vw;
+    height: 5vw;
+    /* border: 1px solid #f2f2f2; */
+    /* border-radius: 50%; */
+    position: absolute;
+    right: 20%;
+    bottom: 10%;
+    display: grid;
+    place-items: center;
+    font-size: 2em;
+    animation: animateFindMore 1s ease-in-out .1s infinite alternate ;
+}
+
+#find_more:hover{
+    cursor: pointer;
+    animation-play-state: paused;
+}
+
+@keyframes animateFindMore{
+    from{
+        transform: translateY(0);
+        opacity: 1;
+    }
+    to{
+        transform: translateY(100%);
+        opacity: 0.1;
+    }
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 960px) {
+    #hero-banner h1{
+        font-size: 2.2em;
+        line-height: 1.6em;
+        flex-basis: 70%;
+        /* background-color: red; */
+    }
+}

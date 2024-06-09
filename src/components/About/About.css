@@ -1,0 +1,46 @@
+.about{
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 90%;
+    height: 60vh;
+    /* background: rgba(165, 42, 42, 0.134); */
+}
+
+.about aside:first-child{
+    flex-basis: 55%;
+    /* background-color: red; */
+    /* height: 60vh; */
+}
+
+.about aside:last-child{
+    flex-basis: 40%;
+    /* background-color: blue; */
+    height: 60vh;
+    text-align: justify;
+}
+
+.about aside:last-child p{
+    /* background-color: aquamarine; */
+    width: 60%;
+}
+
+
+.about video{
+    width: 100%;
+    aspect-ratio: 16/9;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* MEDIA QUERIES */
+@media (max-width: 960px) {
+    .about{
+        margin: 0 auto;
+    }
+
+    .about aside:last-child p{
+        width: 100%;
+    }
+}

@@ -1,0 +1,21 @@
+.floating-icon{
+    display: inline-block;
+    position: absolute;
+    font-size: 5em;
+    transform: scale(7) translateX(2px);
+    /* transform: rotate(75deg); */
+    color: rgba(255, 124, 77, 0.295);
+    opacity: .25;
+    right: 5%;
+    transition: all 0.3s ease-in-out;
+}
+
+.animate-icon{
+    animation: animateIcon .8s ease-in-out .2s 5 backwards alternate-reverse;
+}
+
+@keyframes animateIcon {
+    to{
+        transform: scale(7) translate(0);
+    }
+}

@@ -1,0 +1,10 @@
+{
+    "english": {
+        "aboutLink": "Who are we?",
+        "contactLink": "Contact us"
+    },
+    "french": {
+        "aboutLink": "Qui sommes-nous?",
+        "contactLink": "Contactez-nous"
+    }
+}
