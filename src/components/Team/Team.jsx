@@ -4,19 +4,21 @@ import './Team.css'
 import teamImg1 from './../../assets/ex_bg.jpg'
 import teamImg2 from './../../assets/team1.jpg'
 
-const Team = () => {
+
+const Team = ({languageData}) => {
+  
   return (
     <>
-        <Title text={'The Team'} id={'contact_us'} subTitle={'Working with you'}/>
+        <Title text={languageData.titleTeam} id={'contact_us'} subTitle={languageData.subTitleTeam}/>
         <div className='team-images'>
           <div className="img1">
             <img src={teamImg1} alt="" />
-            <p>Ben Holl : Manager chef</p>
+            <p>Directeur en chef</p>
           </div>
-            <hr />
+            {/* <hr /> */}
           <div className="img2">
             <img src={teamImg2} alt="" />
-            <p>Marcy Holl : Assistant Manager</p>
+            <p>Adjoint Manager</p>
           </div>
         </div>
     </>

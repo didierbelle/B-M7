@@ -9,5 +9,14 @@
     "titleAbout": "A propos de",
     "subTitleAbout": "B&M7 productions",
     "aboutp1": "Nous sommes l'ami dont vous rêvez. ",
-    "aboutp2": "L'ami toujours partant dans vos projets, celui qui célèbre vos victoires après avoir été tout le temps présent."
+    "aboutp2": "L'ami toujours partant dans vos projets, celui qui célèbre vos victoires après avoir été tout le temps présent.",
+    "titleServices": "Les services",
+    "subTitleServices": "Que nous offrons",
+    "titleTeam": "L'équipe",
+    "subTitleTeam": "avec vous",
+    "titleContact": "Nos contacts",
+    "subTitleContact": "et réseaux sociaux",
+    "addressContactLabel": "Adresse",
+    "phoneContactLabel": "Téléphone",
+    "footerRights": "Tous droits réservés. "
 }

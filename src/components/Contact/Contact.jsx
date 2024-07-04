@@ -3,17 +3,24 @@ import Title from './../Title/Title.jsx'
 import './Contact.css'
 import Team from '../Team/Team.jsx'
 
-const Contact = () => {
+import { useInView } from 'react-intersection-observer'
+
+const Contact = ({languageData}) => {
+
+  const {ref, inView} = useInView({
+    threshold: 0.15
+  })
+
   return (
-    <section className='contact'>
+    <section className={`contact ${inView ? 'animate-section' : ''}`} ref={ref}>
       <aside className="second-contact-aside">
-          <Team />
+          <Team languageData={languageData}/>
       </aside>
       <aside className="first-contact-aside">
-          <Title text={'Our Contact'} id={'contact_us'} subTitle={'and social medias'}/>
+          <Title text={languageData.titleContact} id={'contact_us'} subTitle={languageData.subTitleContact}/>
           <ul className='contact-list'>
-              <li>Address : Rue de la paix</li>
-              <li>Phone : +246 2356 6 87 64 62</li>
+              <li>{languageData.addressContactLabel} : Rue de la paix</li>
+              <li>{languageData.phoneContactLabel} : +246 2356 6 87 64 62</li>
               <br />
               <li>X : <a href="#" className='contact-link'>X.com</a></li>
               <li>Facebook : <a href="#" className='contact-link'>Facebook.com</a></li>

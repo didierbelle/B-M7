@@ -1,5 +1,5 @@
 nav{
-    width: 100%;
+    width: 100vw;
     /* background-color: rebeccapurple; */
     display: flex;
     align-items: center;
@@ -17,8 +17,12 @@ nav{
     background: linear-gradient(to bottom, #f2f2f2 90%, rgba(255, 255, 255, 0));
     color: #070512ce;   
     /* border-bottom: .5px solid #070512ce; */
-    font-weight: 600;
-    position: scroll;
+    /* font-weight: 600; */
+    /* position: scroll; */
+}
+
+nav > div{
+    display: none;
 }
 
 nav ul{
@@ -36,6 +40,13 @@ nav ul li{
     text-transform: uppercase;
     font-size: 80%;
     transition: all 0.4s ease;
+    /* background-color: pink; */
+    /* border: 1px solid red; */
+}
+
+nav ul li:last-child{
+    width: 10%;
+    cursor: pointer;
 }
 
 nav ul li:hover a::before{
@@ -58,10 +69,22 @@ nav ul li:hover a::before{
     position: relative;
 }
 
-#select-language:hover #languages, #select-theme:hover #theme{
+#select-language:hover #languages, #select-theme:hover #theme,
+#select-language:focus #languages, #select-theme:focus #theme{
     display: block;
     position: absolute;
-    /* top: 1vh; */
+    animation: animateLanguageApparition .2s ease-in-out .05s backwards;
+}
+
+@keyframes animateLanguageApparition {
+    from{
+        top: 50%;
+        opacity: 0;
+    }
+    to{
+        top: 80%;
+        opacity: 1;
+    }
 }
 
 #languages, #theme{
@@ -72,6 +95,13 @@ nav ul li:hover a::before{
     display: none;
     margin: 0;
     color: #f2f2f2;
+}
+
+#languages a, #theme a{
+    display: inline-block;
+    /* line-height: 4; */
+    /* background-color: red; */
+    width: 100%;
 }
 
 .link-selected{
@@ -103,13 +133,107 @@ nav ul li:hover a::before{
     nav{
        padding: 0 .05vw;
        font-size: 90%;
+
+       width: 100vw;
+        /* background-color: rebeccapurple; */
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+        padding: 0 1vw;
+        height: 10vh;
+        background: rgb(237, 237, 237, 0.1);
+        backdrop-filter: blur(10px);
+        position:fixed;
+        z-index: 100;
+        transition: all 0.1s ease;
     }
 
     nav ul{
-        gap: 1.5vw;
+        gap: 2vw;
+        /* transition: all 3s ease-in-out; */
     }
 
     nav ul li{
         /* font-size: 70%; */
+    }
+}
+
+@media (width < 768px) {
+    nav{
+       padding: 0 .05vw;
+       /* font-size: 90%; */
+        width: 100vw;
+        /* background-color: rebeccapurple; */
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 15vw;
+        height: 10vh;
+        background: #d2c0ad2b;
+        backdrop-filter: blur(10px);
+        position:fixed;
+        z-index: 100;
+        transition: all 0.1s ease;
+    }
+
+    .dark{
+        background: linear-gradient(to bottom, #f2f2f2, #f2f2f2);
+        color: #070512ce;   
+        /* border-bottom: .5px solid #070512ce; */
+        /* font-weight: 600; */
+        /* position: scroll; */
+    }
+
+    nav > div{
+        display: block;
+    }
+
+    nav ul{
+        background-color: #f2f2f2;
+        height: 100vh;
+        width: 100%;
+        position: absolute;
+        opacity: 0;
+        left: -100%;
+        bottom: 0;
+        top: 10vh;
+        display: flex;
+        flex-direction: column;
+        gap: 2em;
+        font-size: 2em;
+        text-align: center;
+        color: var(--main-color);
+        padding-bottom: 5em;
+        transition: all ease-in-out 1s;
+    }
+
+    .sideMenu{
+        animation: showSideMenu .8s cubic-bezier(0.46, 0.01, 0.59, 1.39) .1s 1 forwards;
+    }
+
+    nav ul li{
+        /* display: block; */
+        /* background-color: rgba(127, 255, 212, 1); */
+        width: 50vw;
+        line-height: 1.5;
+    }
+
+    #languages, #theme{
+        background-color: /*#2d0f49*/ var(--main-color);
+        width: 100%;
+        text-align: center;
+        line-height: 1;
+        display: none;
+        margin: 0;
+        color: #f2f2f2;
+        font-size: .8em;
+        text-align: left;
+    }
+
+    @keyframes showSideMenu {
+        to{
+            left: 0;
+            opacity: 1;
+        }
     }
 }

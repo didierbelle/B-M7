@@ -1,12 +1,12 @@
 import React, { useEffect, useState } from 'react'
 import './Navbar.css'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+import { faMoon, faSun, faBars, faClose } from '@fortawesome/free-solid-svg-icons';
 
 const Navbar = ({languageHandler, languageData, language}) => {
 
   const [dark, setDark] = useState(false);
-
+  const [showSideMenu, setShowSideMenu] = useState(false);
 
   useEffect(() => {
     window.addEventListener('scroll', () => {
@@ -26,33 +26,43 @@ const Navbar = ({languageHandler, languageData, language}) => {
     languageHandler();
   }
 
+  const handleSideMenu = (e) => {
+    e.preventDefault();
+    setShowSideMenu(!showSideMenu);
+  }
+
   return (
     <nav className={dark ? 'dark' : ''}>
-        <p><a href="#">
-          {/* <img src={Logo} alt="" /> */}
-          B&M7
-          </a>
-        </p>
-        <ul>
-            <li><a href="#about"> {languageData.navLinkAbout} </a> </li>
-            <li><a href="#services" className='link-selected'> Services </a> </li>
-            <li><a href="#contact_us"> {languageData.navLinkContact} </a> </li>
-            <li id="select-language">
-                {language}
-                
-                <div id="languages">
-                    <a href='#' onClick={handleLanguage}>FR / EN</a>
-                </div>
-            </li>
-        </ul>
-        <div id='select-theme'>
-          <span >{languageData.navTheme}</span>
-          <p id="theme">
-              <a href='#' onClick={handleTheme}>
-                <FontAwesomeIcon icon={faSun} /> / <FontAwesomeIcon icon={faMoon} /> 
-              </a>
-          </p>  
-        </div>
+      <div>
+        <span tabIndex={0}>
+          <FontAwesomeIcon icon={ showSideMenu ? faClose : faBars} onClick={handleSideMenu} />
+        </span>
+      </div>
+      <p><a href="#">
+        {/* <img src={Logo} alt="" /> */}
+        B&M7
+        </a>
+      </p>
+      <ul className={showSideMenu ? 'sideMenu' : ''}>
+        <li><a href="#about"> {languageData.navLinkAbout} </a> </li>
+        <li><a href="#services" className='link-selected'> Services </a> </li>
+        <li><a href="#contact_us"> {languageData.navLinkContact} </a> </li>
+        <li id="select-language" tabIndex={0}>
+            {language}
+            
+            <div id="languages">
+                <a href='#' id='languages' onClick={handleLanguage}>FR / EN</a>
+            </div>
+        </li>
+      </ul>
+      {/* <div id='select-theme'>
+        <span >{languageData.navTheme}</span>
+        <p id="theme">
+            <a href='#' onClick={handleTheme}>
+              <FontAwesomeIcon icon={faSun} /> / <FontAwesomeIcon icon={faMoon} /> 
+            </a>
+        </p>  
+      </div> */}
     </nav>
   )
 }

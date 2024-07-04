@@ -9,5 +9,14 @@
     "titleAbout": "About us",
     "subTitleAbout": "B&M7 productions",
     "aboutp1": "We are the friend you would like to have. ",
-    "aboutp2": "The friend who is always into what you wanna do, the one who celebrates your success after being at the bottom all along with you."
+    "aboutp2": "The friend who is always into what you wanna do, the one who celebrates your success after being at the bottom all along with you.",
+    "titleServices": "The services",
+    "subTitleServices": "We can offer you",
+    "titleTeam": "The team",
+    "subTitleTeam": "Working with you",
+    "titleContact": "Our contact",
+    "subTitleContact": "And social medias",
+    "addressContactLabel": "Address",
+    "phoneContactLabel": "Phone",
+    "footerRights": "All rights reserved."
 }

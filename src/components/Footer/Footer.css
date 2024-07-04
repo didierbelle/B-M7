@@ -7,3 +7,9 @@ footer{
     display: grid;
     place-items: center;
 }
+
+@media (width < 768px){
+    footer{
+        font-size: .9em;
+    }
+}

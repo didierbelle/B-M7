@@ -10,7 +10,7 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
-  /* outline: .5px solid pink; */
+  /* outline: .5px solid yellow; */
 }
 
 html{
@@ -21,10 +21,33 @@ html{
 
 body{
   background-color: #d2c0ad2b;
-  line-height: 1.5em;
+  line-height: 1.5;
   /* font-family: 'Hind', 'Montserrat', sans-serif; */
   overflow-x: hidden;
+  width: 100vw;
 }
+
+main{
+  overflow-x: hidden;
+}
+
+.about, .services, .contact{
+  right: 5%;
+  opacity: 0.1;
+  /* background: rgba(165, 42, 42, 0.134); */
+}
+
+.animate-section{
+  animation: animateSection 1s cubic-bezier(0.16, 0.56, 0.63, 1.35) 1 forwards/*animateAboutSection .2s ease-in-out  infinite forwards*/;
+}
+
+@keyframes animateSection {
+  to{
+      right: 0;
+      opacity: 1;
+  }
+}
+
 
 a{
   text-decoration: none;
@@ -62,5 +85,15 @@ ul{
   h2{
     font-size: 1em;
     font-family: 'Montserrat', sans-serif;
+  }
+}
+
+@media (width < 768px) {
+  html{
+    scroll-padding-top: 15vh;
+  }
+
+  main{
+    /* overflow-y: hidden; */
   }
 }

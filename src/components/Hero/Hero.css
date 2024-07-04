@@ -3,7 +3,7 @@
     position: absolute;
     top: 25%;
     left: 10%;
-    width: 50vw;
+    width: 55vw;
     height: 40vh;
     display: flex;
     flex-direction: column;
@@ -12,7 +12,7 @@
 }
 
 #hero-banner h1{
-    font-size: 3em;
+    font-size: 2.5em;
     line-height: 1.5em;
     /* background: linear-gradient(to right, blue, pink); */
     /* background-clip: text; */
@@ -61,6 +61,10 @@
     /* z-index: -1; */
 }
 
+#hero-banner button:focus::after{
+    border: none;
+}
+
 #find_more{
     text-align: center;
     width: 5vw;
@@ -94,10 +98,74 @@
 
 /* MEDIA QUERIES */
 @media (max-width: 960px) {
+    #hero-banner{
+        /* background-color: red; */
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0 auto;
+        padding-left: .5em;
+        width: 90%;
+        height: 40vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        text-transform: capitalize;
+    }
+
     #hero-banner h1{
         font-size: 2.2em;
         line-height: 1.6em;
         flex-basis: 70%;
-        /* background-color: red; */
+    }
+}
+
+@media (width < 768px) {
+    #hero-banner{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        margin: 0 auto;
+        padding-left: .5em;
+        width: 90%;
+        height: 35vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        text-transform: capitalize;
+    }
+
+    #hero-banner h1{
+        font-size: 1.55em;
+        line-height: 1.5;
+        width: 75%;
+        /* background: linear-gradient(to right, blue, pink); */
+        /* background-clip: text; */
+        /* -webkit-background-clip: text; */
+        /* color: transparent; */
+        /* background: yellowgreen; */
+        /* flex-basis: 70%; */
+    }
+
+    #hero-banner button{
+        width: 75%;
+        letter-spacing: 1px;
+    }
+    
+    #find_more{
+        text-align: center;
+        width: 5vw;
+        height: 5vw;
+        /* border: 1px solid #f2f2f2; */
+        /* border-radius: 50%; */
+        position: absolute;
+        right: 50%;
+        bottom: 10%;
+        display: grid;
+        place-items: center;
+        font-size: 1em;
+        animation: animateFindMore 1s ease-in-out .1s infinite alternate ;
     }
 }

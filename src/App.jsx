@@ -6,6 +6,7 @@ import Contact from './components/Contact/Contact'
 import Footer from './components/Footer/Footer'
 import { LanguageContext } from './store/LanguageContext.jsx'
 
+
 const App = () => {
 
   //const [languageStored, setLanguageStored] = useState(null);
@@ -33,11 +34,11 @@ const App = () => {
       <main>
         <About languageHandler={handleToggleLanguage} languageData={languageData} />
         <hr />
-        <Services />
+        <Services languageData={languageData} />
         <hr />
-        <Contact />
+        <Contact languageData={languageData}/>
         <hr />
-        <Footer />
+        <Footer languageData={languageData}/>
       </main>
     </>
   )

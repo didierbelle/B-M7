@@ -9,7 +9,7 @@ import { useInView } from "react-intersection-observer";
 const FloatingIcon = () => {
 
     const {ref, inView} = useInView({
-        threshold : 0.3
+        threshold : 0.05
     })
 
   return (
